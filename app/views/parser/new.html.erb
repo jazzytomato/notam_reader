@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h2>NOTAM Parser</h2>
+		<%= form_tag(run_path, :method => "post", class: "form-horizontal") do %>
+		  <div class="form-group">
+		  <%= text_area_tag :data, params[:data], class: "form-control", rows:"15", cols:"50", placeholder: "Paste NOTAM data here" %>
+		  </div>
+		  <%= submit_tag "Parse", class: "btn btn-success btn-block" %>
+		<% end %>
+	</div>
+</div>
+
+<%= render 'notam_table', object: @results %>
